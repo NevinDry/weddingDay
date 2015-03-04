@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>sylvie&philippe Wedding</title>
+<title>SCOOP 2015</title>
 <link rel="stylesheet" href="css/style.css" />
  <script type="text/javascript" src="js/jquery.js"></script>
  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
@@ -9,9 +9,35 @@
  	$(window).load(function() {
       $(".loader").hide();
 	  // When the page has loaded
-	  $(".main").show( "blind", {direction: "vertical"}, 8000 );
+	  $(".main").show( "blind", {direction: "vertical"}, 8000 );  
 	});
- 	
+ 	$(document).ready(function() {
+	 	$( ".myButton" ).click(function() {
+			var nom = $( "#nom" ).val();
+			console.log(nom);
+			
+			var select = $( "#select" ).val();
+			console.log(select);
+			if (nom!=""){
+				$(".needName").hide();
+				console.log("pasvide");
+				$.ajax({
+			         type: "GET",
+			         url:"process.php",
+			         data: "nom="+nom+"&select="+select,
+			         success: function(msg){
+			        	$(".success").show(1000);
+			        	$(".formW").hide();
+			         }
+			     });
+			}else{
+				$(".needName").show(1000);
+			}
+			
+	         
+			
+		});
+ 	});
  	
  </script>
 </head>
@@ -23,16 +49,18 @@
 	Le lieu et le déroulement de la soiréé vous seront communiqués ultérieurement<br>
 	Merci de confirmer votre présence :
 	</div>
+	<br><div class="success">Votre réponse est bien enregistrée</div>
 	<div class="formW">
 		<div class="lineForm">
 			<label>Nom :</label> 
 			<input class="form-control" type="text" id="nom" name="nom">
+			<br><span class="needName">Veuillez renseigner votre nom</span>
 		</div>
 		<div class="lineForm">
 			<label>Sera présent :</label> 
-			<select name="select">
-	  			<option value="value1" selected>Oui</option> 
-	  			<option value="value2" >Non</option>
+			<select id="select" name="select">
+	  			<option value="oui" selected>Oui</option> 
+	  			<option value="non" >Non</option>
 			</select>
 		</div>
 		<a href="#" class="myButton">Valider</a>
