@@ -3,23 +3,40 @@
 <head>
 <title>sylvie&philippe Wedding</title>
 <link rel="stylesheet" href="css/style.css" />
+ <script type="text/javascript" src="js/jquery.js"></script>
+ <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+ <script type="text/javascript">
+ 	$(window).load(function() {
+      $(".loader").hide();
+	  // When the page has loaded
+	  $(".main").show( "blind", {direction: "vertical"}, 8000 );
+	});
+ 	
+ 	
+ </script>
 </head>
 <body>
-<IMG class="image" SRC="image/wedding.jpg">
-<div class="textW">Sylvie et Philippe vous invite à leur mariage le 18 juillet 2015</div>
-<div class="formW">
-	<div class="lineForm">
-		<label>Nom :</label> 
-		<input class="form-control" type="text" id="nom" name="nom">
+<IMG class="loader" SRC="image/lloader.gif">
+<div class="main">
+	<IMG class="image" SRC="image/wedding.jpg">
+	<div class="textW">Vous invite à leur mariage le samedi 18 juillet 2015<br>
+	Le lieu et le déroulement de la soiréé vous seront communiqués ultérieurement<br>
+	Merci de confirmer votre présence :
 	</div>
-	<div class="lineForm">
-		<label>Sera présent :</label> 
-		<select name="select">
-  			<option value="value1" selected>Oui</option> 
-  			<option value="value2" >Non</option>
-		</select>
+	<div class="formW">
+		<div class="lineForm">
+			<label>Nom :</label> 
+			<input class="form-control" type="text" id="nom" name="nom">
+		</div>
+		<div class="lineForm">
+			<label>Sera présent :</label> 
+			<select name="select">
+	  			<option value="value1" selected>Oui</option> 
+	  			<option value="value2" >Non</option>
+			</select>
+		</div>
+		<a href="#" class="myButton">Valider</a>
 	</div>
-	<a href="#" class="myButton">Valider</a>
 </div>
 </body>
 </html>

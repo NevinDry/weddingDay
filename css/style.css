@@ -7,27 +7,39 @@
 	width:65%;
 }
 
+.loader{
+	display: block;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
 body{
 	background-color:#DCD8D9;
+}
+
+.main{
+	display:none;
 }
 
 .textW{
 margin-left: auto;
 margin-top: 20px;
 margin-right: auto;
-width: 70%;
-color: #AB845C;
-font-size: 2.5vw;
-font-family: Georgia;
+text-align:center;
+color: #52251C;
+font-size: 30px;
+font-family: "wedding";
+font-weight: bold;
 }
 
 .formW{
 	padding-top: 10px;
 	width: 300px;
 	margin: auto;
-	color: #AB845C;
-	font-size: 15px;
-	font-family: Georgia;
+	color: #52251C;
+	font-size: 26px;
+	font-family: "wedding";
+	 font-weight: bold;
 	text-align:center;
 }
 
@@ -37,6 +49,10 @@ font-family: Georgia;
 	width: 96px;
 }
 
+@font-face {
+    font-family: "wedding";
+    src: url('wedding.ttf');
+}
 
 .myButton {
 	margin-top:5px;
@@ -57,7 +73,7 @@ font-family: Georgia;
 	border:1px solid #dcdcdc;
 	display:inline-block;
 	cursor:pointer;
-	color:#AB845C;
+	color:#52251C;
 	font-family:arial;
 	font-size:17px;
 	font-weight:bold;
