@@ -26,8 +26,12 @@
 			         url:"process.php",
 			         data: "nom="+nom+"&select="+select,
 			         success: function(msg){
-			        	$(".success").show(1000);
-			        	$(".formW").hide();
+			        	 $(".formW").hide();
+			        	 if(select=="oui"){
+				        	$(".successOK").show(1000);
+			        	 }else{
+			        		$(".successKO").show(1000);	
+			        	 }
 			         }
 			     });
 			}else{
@@ -43,13 +47,16 @@
 </head>
 <body>
 <IMG class="loader" SRC="image/lloader.gif">
+<div class="loader">chargement</div>
 <div class="main">
 	<IMG class="image" SRC="image/wedding.jpg">
 	<div class="textW">Vous invite à leur mariage le samedi 18 juillet 2015<br>
 	Le lieu et le déroulement de la soiréé vous seront communiqués ultérieurement<br>
 	Merci de confirmer votre présence :
 	</div>
-	<br><div class="success">Votre réponse est bien enregistrée</div>
+	<br>
+	<div id="success" class="successOK">Super, nous sommes ravis de vous compter parmi nous</div>
+	<div id="success" class="successKO">Dommage, nous aurions bien aimé vous compter parmi nous</div>
 	<div class="formW">
 		<div class="lineForm">
 			<label>Nom :</label> 
